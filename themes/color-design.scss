@@ -1,0 +1,56 @@
+@use '@angular/material' as mat;
+
+@font-face {
+  font-family: "gobcl-light";
+  src: url("../fonts/gobcl_light-webfont.woff2") format("woff2"), url("../fonts/gobcl_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gobcl-regular";
+  src: url("../fonts/gobcl_regular-webfont.woff2") format("woff2"), url("../fonts/gobcl_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gobcl-bold";
+  src: url("../fonts/gobcl_bold-webfont.woff2") format("woff2"), url("../fonts/gobcl_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "gobcl-heavy";
+  src: url("../fonts/gobcl_heavy-webfont.woff2") format("woff2"), url("../fonts/gobcl_heavy-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$blue-palette, 800);
+$my-accent: mat.define-palette(mat.$blue-palette, 800);
+$my-warn: mat.define-palette(mat.$cyan-palette, 300, 300, 400);
+$my-typography: mat.define-typography-config(
+  $font-family: 'gobcl-regular',
+);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: $my-typography,
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($my-theme);
+
+// Emit styles for MatButton based on `$my-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.button-theme($my-theme);
+
+@include mat.all-component-themes($my-theme);
+
+// Include the theme mixins for other components you use here.

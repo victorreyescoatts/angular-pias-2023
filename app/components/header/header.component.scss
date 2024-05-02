@@ -1,0 +1,185 @@
+// colores primarios
+
+$azul1:#0F69B4;
+$azul2:#0B4582;
+$azul3:#183A68;
+$azul4:#07272D;
+$calipso:#6CCCD6;
+$celeste:#D3DEF2;
+$amarillo:#F3D03E;
+$rojo:#EB3C46;
+$ocre:#F2E6D9;
+$rosa:#FAD8E1;
+$blanco:#FFFFFF;
+
+// colores en escala de grises
+
+$gris-05: #F0F0F0;
+$gris-10: #F7F7F7;
+$gris-20: #DEDEDE;
+$gris-30: #C3C2C2;
+$gris-40: #B9B9B9;
+$gris-50: #BABABA;
+$gris-70: #636566;
+$gris-80: #4E4E4E;
+$negro:#000000;
+
+@font-face {
+    font-family: "gobcl-light";
+    src: url("../../../fonts/gobcl_bold-webfont.woff") format("woff2"), url("../../../fonts/gobcl_light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-regular";
+    src: url("../../../fonts/gobcl_regular-webfont.woff2") format("woff2"), url("../../../fonts/gobcl_regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-bold";
+    src: url("../../../fonts/gobcl_bold-webfont.woff2") format("woff2"), url("../../../fonts/gobcl_bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-heavy";
+    src: url("../../../fonts/gobcl_heavy-webfont.woff2") format("woff2"), url("../../../fonts/gobcl_heavy-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  //Familia Tipográfica
+
+$gobcl-regular :'gobcl-regular';
+$gobcl-bold :'gobcl-bold';
+$gobcl-light:'gobcl-light';
+$gobcl-heavy :'gobcl-heavy';
+
+
+.header{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 10;
+    font-family: $gobcl-regular;
+}
+.modo-pruebas{
+    width: 100%;
+    height: 40px;
+    background-color: orangered;
+    color: $blanco;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.logo-entidad{
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+.logo{
+    width: 18.25%;
+    height: 60px;
+    background: url("../../../assets/img/bg-logo.png") center no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.logo img{
+    width: 83%;
+    height: auto;
+}
+
+.entidad{
+    width: 81%;
+    height: 39px;
+    background-color: $celeste;
+    display: flex;
+    padding: 10px 0 10px 36px;
+}
+
+.entidad-tipo{
+    display: flex;
+}
+
+.entidad-tipo h4{
+    font-family: $gobcl-bold;
+    color: $azul2;
+    margin-top: 7px;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.pias-circle{
+    background-color: $blanco;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 7px;
+    color: $azul1;
+}
+
+.dominios-pias,
+.wiki,
+.usuario{
+    padding: 0 5%;
+    margin:0 6px;
+    border-left: 1px solid $azul1;
+}
+
+.simple-link{
+    color: #0F69B4;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+      }
+}
+
+  // Responsivo
+
+  @media only screen and (max-width: 1500px) {
+
+.logo{
+    width: 18.35%;
+}
+
+.logo img{
+    width: 91%;
+}
+
+  }
+
+  @media only screen and (max-width: 1360px) {
+
+.logo{
+    width: 18.4%;
+}
+
+.logo img{
+    width: 100%;
+}
+
+  }
+
+  @media only screen and (max-width: 1024px) {
+
+.logo{
+    width: 18.55%;
+}
+
+  }
+
+  @media only screen and (max-width: 850px) {
+
+.logo{
+    width: 18.8%;
+}
+
+  }

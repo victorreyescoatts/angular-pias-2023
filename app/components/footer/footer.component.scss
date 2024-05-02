@@ -1,0 +1,63 @@
+// colores primarios
+
+$azul1:#0F69B4;
+$azul2:#0B4582;
+$azul3:#183A68;
+$azul4:#07272D;
+$calipso:#6CCCD6;
+$celeste:#D3DEF2;
+$amarillo:#F3D03E;
+$rojo:#EB3C46;
+$ocre:#F2E6D9;
+$rosa:#FAD8E1;
+$blanco:#FFFFFF;
+
+// colores en escala de grises
+
+$gris-05: #F0F0F0;
+$gris-10: #F7F7F7;
+$gris-20: #DEDEDE;
+$gris-30: #C3C2C2;
+$gris-40: #B9B9B9;
+$gris-50: #BABABA;
+$gris-70: #636566;
+$gris-80: #4E4E4E;
+$negro:#000000;
+
+@font-face {
+    font-family: "gobcl-light";
+    src: url("../../../fonts/gobcl_bold-webfont.woff") format("woff2"), url("../../../fonts/gobcl_light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-regular";
+    src: url("../../../fonts/gobcl_regular-webfont.woff2") format("woff2"), url("../../../fonts/gobcl_regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-bold";
+    src: url("../../../fonts/gobcl_bold-webfont.woff2") format("woff2"), url("../../../fonts/gobcl_bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-heavy";
+    src: url("../../../fonts/gobcl_heavy-webfont.woff2") format("woff2"), url("../../../fonts/gobcl_heavy-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  //Familia Tipográfica
+
+$gobcl-regular :'gobcl-regular';
+$gobcl-bold :'gobcl-bold';
+$gobcl-light:'gobcl-light';
+$gobcl-heavy :'gobcl-heavy';
+
+.footer{
+    width: 100%;
+    height: 60px;
+    background-color: $azul4;
+}

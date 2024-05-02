@@ -1,0 +1,702 @@
+<app-header></app-header>
+<div class="separador al-50"></div>
+<div class="row">
+
+  <!-- Menú lateral izquierdo -->
+  <div id="menu">
+    <app-menu></app-menu>
+  </div>
+
+  <!-- Vista Contenido -->
+  <div class="contenido">
+   <div class="container">
+      <h1>Consulta causante</h1>
+      
+      <div class="migaspan">Inicio / PIAS / Consulta causante</div>
+      <div class="separador al-10"></div>
+      <div class="separador al-10"></div>
+
+      <div class="row">
+        <!--Input-->
+        <div class="col-md-3">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>R.U.N.</mat-label>
+              <input matInput placeholder="10.879.059-9">
+            </mat-form-field>
+          </form>
+        </div>
+
+        <!--Botón-->
+        <div class="col-md-1">
+          <div class="separador al-10"></div>
+          <div class="separador al-10"></div>
+          <form class="example-form">
+            <button mat-flat-button color="warn">Consultar</button>
+          </form>
+        </div>
+        <!--Cancelar-->  
+        <div class="col-md-1">
+          <div class="separador al-10"></div>
+          <div class="separador al-10"></div>
+          <button mat-stroked-button>Cancelar</button>
+        </div>
+        <!--Dialogo - Modal-->  
+        <div class="col-md-2">
+          <div class="separador al-10"></div>
+          <div class="separador al-10"></div>
+          <a class="simple-link" (click)="openDialog()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">language</mat-icon> <span>Dominios PIAS</span>
+          </a>
+        </div>
+        <!--Dialogo - Modal-->  
+        <div class="col-md-2">
+          <div class="separador al-10"></div>
+          <div class="separador al-10"></div>
+          <a class="simple-link" (click)="openDialog()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">language</mat-icon> <span>Dominios PIAS</span>
+          </a>
+        </div>
+      </div>
+      <div class="separador al-10"></div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <!-- <h4>Basic mat-select</h4> -->
+          <mat-form-field>
+            <mat-label>Región</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let comuna of comunas" [value]="comuna.value">
+                {{comuna.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <!-- <h4>Basic native select</h4> -->
+          <mat-form-field>
+            <mat-label>Tipo causante</mat-label>
+            <select matNativeControl required>
+              <option value="causanteuno">Tipo causante número uno</option>
+              <option value="causantedos">Tipo causante número dos</option>
+              <option value="causantetres">Tipo causante número tres</option>
+              <option value="causantecuatro">Tipo causante número cuatro</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+      <div class="col-md-3">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Asignación Familiar</mat-label>
+            <input disabled matInput placeholder="Asignación Familiar">
+          </mat-form-field>
+        </form>
+      </div>
+    </div>  
+    
+    <div class="separador al-10"></div>
+
+    <div class="row">
+      <!--Fecha-->  
+      <div class="col-md-3">
+        <mat-form-field>
+          <mat-label>Fecha inicio beneficio</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+      </div>
+      <div class="col-md-3">
+        <div class="separador al-10"></div>
+        <section class="example-section">
+          <mat-checkbox class="example-margin">Checkbox click aquí!</mat-checkbox>
+          <mat-checkbox class="example-margin" [disabled]="true">Deshabilitado</mat-checkbox>
+        </section>
+      </div>
+      <div class="col-md-3">
+        <div class="separador al-10"></div>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+          <mat-radio-button value="2">Option 2</mat-radio-button>
+        </mat-radio-group>
+        
+      </div>
+    </div>
+<!--       <div class="row">
+        <div class="col-md-6">
+          <section>
+      <div class="example-label">Basic</div>
+      <div class="example-button-row">
+        <button mat-button>Basic</button>
+        <button mat-button color="primary">Primary</button>
+        <button mat-button color="accent">Accent</button>
+        <button mat-button color="warn">Warn</button>
+        <button mat-button disabled>Disabled</button>
+        <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Raised</div>
+      <div class="example-button-row">
+        <button mat-raised-button>Basic</button>
+        <button mat-raised-button color="primary">Primary</button>
+        <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button color="warn">Warn</button>
+        <button mat-raised-button disabled>Disabled</button>
+        <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Stroked</div>
+      <div class="example-button-row">
+        <button mat-stroked-button>Basic</button>
+        <button mat-stroked-button color="primary">Primary</button>
+        <button mat-stroked-button color="accent">Accent</button>
+        <button mat-stroked-button color="warn">Warn</button>
+        <button mat-stroked-button disabled>Disabled</button>
+        <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Flat</div>
+      <div class="example-button-row">
+        <button mat-flat-button>Basic</button>
+        <button mat-flat-button color="primary">Primary</button>
+        <button mat-flat-button color="accent">Accent</button>
+        <button mat-flat-button color="warn">Warn</button>
+        <button mat-flat-button disabled>Disabled</button>
+        <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Icon</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+            <mat-icon>home</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">FAB</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+              <mat-icon>bookmark</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab disabled aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Mini FAB</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+              <mat-icon>plus_one</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+              <mat-icon>filter_list</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+        </div>
+      </div>
+ -->    </div> 
+
+ <div class="separador al-70"></div>
+
+ <div class="row">
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      search
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      home
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      account_circle
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      settings
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      logout
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      event
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      task_alt
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      check_circle_outline
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      report_problem
+      </span>
+  </div>
+ </div>
+
+ <div class="separador al-30"></div>
+
+ <div class="row">
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      language
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      add_circle
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      add_circle_outline
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      menu_book
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      local_library
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      print
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      fingerprint
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      description
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      people
+      </span>
+  </div>
+ </div>
+
+ <div class="separador al-30"></div>
+
+ <div class="row">
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      person_add
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      upload_file
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      cloud_download
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      edit
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      attach_money
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      edit_document
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      vpn_key
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      keyboard_arrow_down
+      </span>
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      sentiment_satisfied_alt
+      </span>
+  </div>
+ </div>
+
+ <div class="separador al-70"></div>
+
+ <div class="row">
+  <div class="col-md-1">
+    <span class="material-icons ico-18">
+      search
+      </span>
+      18px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-24">
+      search
+      </span>
+      24px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-30">
+      search
+      </span>
+      30px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-36">
+      search
+      </span>
+      36px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-42">
+      search
+      </span>
+      42px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-48">
+      search
+      </span>
+      48px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-54">
+      search
+      </span>
+      54px
+  </div>
+  <div class="col-md-1">
+    <span class="material-icons ico-60">
+      search
+      </span>
+      60px
+  </div>
+ </div>
+<!--Fin Iconos-->
+ <div class="separador al-50"></div>
+ 
+ <!--Chips Pias + Texto-->
+ <div class="row">
+  <div class="col-md-3">
+    <div class="pias-chips color-azul">
+      <p>AMI</p>
+    </div>
+    <div class="separador al-10"></div>
+    <span>Asignación Maternal Independientes</span>
+  </div>
+  <div class="col-md-3">
+    <div class="pias-chips color-azul">
+      <p>AF</p>
+    </div>
+    <div class="separador al-10"></div>
+    <span>Asignación Familiar</span>
+  </div>
+  <div class="col-md-3">
+    <div class="pias-chips color-azul">
+      <p>AFI</p>
+    </div>
+    <div class="separador al-10"></div>
+    <span>Asignación Familiar Independientes</span>
+  </div>
+ </div>
+ <div class="separador al-30"></div>
+ <div class="row">
+  <div class="col-md-3">
+    <div class="pias-chips color-azul">
+      <p>AM</p>
+    </div>
+    <div class="separador al-10"></div>
+    <span>Asignación Maternal</span>
+  </div>
+  <div class="col-md-3">
+    <div class="pias-chips color-azul">
+      <p>SUF</p>
+    </div>
+    <div class="separador al-10"></div>
+    <span>Subsidio Familiar</span>
+  </div>
+ </div>
+  <!--Fin Chips Pias + Texto-->
+ 
+ <div class="separador al-50"></div>
+
+<div class="row">
+  <div class="col-md-2">
+    <div class="pias-chips-estado color-verde">
+      Reconocimiento vigente
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="pias-chips-estado color-gris">
+      Reconocimiento extinguido
+    </div>
+  </div>
+</div>
+
+ <div class="separador al-50"></div>
+ <!--Inicio Tabla-->
+ <div class="row">
+  <div class="col-md-12">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> R.U.T. causante </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre beneficiario </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="vrc1">
+        <th mat-header-cell *matHeaderCellDef> Fecha extinción </th>
+        <td mat-cell *matCellDef="let element"> {{element.vrc1}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Fecha reconocimiento </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    
+  </div>
+ </div> <!--Fin Tabla-->
+
+ <div class="separador al-30"></div>
+
+ <div class="caja-cont-1">
+  <h2>Beneficiario</h2>
+  <div class="separador al-10"></div>
+  <div class="row">
+    <div class="col-md-3">
+      <!-- <h4>Basic mat-select</h4> -->
+      <mat-form-field>
+        <mat-label>Región</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let comuna of comunas" [value]="comuna.value">
+            {{comuna.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <!-- <h4>Basic native select</h4> -->
+      <mat-form-field>
+        <mat-label>Tipo causante</mat-label>
+        <select matNativeControl required>
+          <option value="causanteuno">Tipo causante número uno</option>
+          <option value="causantedos">Tipo causante número dos</option>
+          <option value="causantetres">Tipo causante número tres</option>
+          <option value="causantecuatro">Tipo causante número cuatro</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-md-3">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Asignación Familiar</mat-label>
+          <input disabled matInput placeholder="Asignación Familiar">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>  
+  <div class="separador al-10"></div>
+  <div class="row">
+    <div class="col-md-3">
+      <!-- <h4>Basic mat-select</h4> -->
+      <mat-form-field>
+        <mat-label>Región</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let comuna of comunas" [value]="comuna.value">
+            {{comuna.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <!-- <h4>Basic native select</h4> -->
+      <mat-form-field>
+        <mat-label>Tipo causante</mat-label>
+        <select matNativeControl required>
+          <option value="causanteuno">Tipo causante número uno</option>
+          <option value="causantedos">Tipo causante número dos</option>
+          <option value="causantetres">Tipo causante número tres</option>
+          <option value="causantecuatro">Tipo causante número cuatro</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-md-3">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Asignación Familiar</mat-label>
+          <input disabled matInput placeholder="Asignación Familiar">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>  
+  <div class="separador al-10"></div>
+  <div class="row">
+    <div class="col-md-3">
+      <!-- <h4>Basic mat-select</h4> -->
+      <mat-form-field>
+        <mat-label>Región</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let comuna of comunas" [value]="comuna.value">
+            {{comuna.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+      <!-- <h4>Basic native select</h4> -->
+      <mat-form-field>
+        <mat-label>Tipo causante</mat-label>
+        <select matNativeControl required>
+          <option value="causanteuno">Tipo causante número uno</option>
+          <option value="causantedos">Tipo causante número dos</option>
+          <option value="causantetres">Tipo causante número tres</option>
+          <option value="causantecuatro">Tipo causante número cuatro</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-md-3">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Asignación Familiar</mat-label>
+          <input disabled matInput placeholder="Asignación Familiar">
+        </mat-form-field>
+      </form>
+    </div>
+  </div>  
+ </div>
+
+ <div class="separador al-100"></div>
+
+ <!-- Login -->
+<app-login></app-login>
+
+<div class="separador al-100"></div>
+
+
+
+  </div> <!--Fin contenido-->
+</div><!--Fin contenido + menu-->
+<app-footer></app-footer>

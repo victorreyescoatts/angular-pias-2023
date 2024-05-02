@@ -1,0 +1,334 @@
+// colores primarios
+
+$azul1:#0F69B4;
+$azul2:#0B4582;
+$azul3:#183A68;
+$azul4:#07272D;
+$calipso:#6CCCD6;
+$celeste:#D3DEF2;
+$amarillo:#F3D03E;
+$rojo:#EB3C46;
+$ocre:#F2E6D9;
+$rosa:#FAD8E1;
+$blanco:#FFFFFF;
+
+// colores en escala de grises
+
+$gris-05: #F0F0F0;
+$gris-10: #F7F7F7;
+$gris-20: #DEDEDE;
+$gris-30: #C3C2C2;
+$gris-40: #B9B9B9;
+$gris-50: #BABABA;
+$gris-70: #636566;
+$gris-80: #4E4E4E;
+$negro:#000000;
+
+@font-face {
+    font-family: "gobcl-light";
+    src: url("../fonts/gobcl_light-webfont.woff2") format("woff2"), url("../fonts/gobcl_light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-regular";
+    src: url("../fonts/gobcl_regular-webfont.woff2") format("woff2"), url("../fonts/gobcl_regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-bold";
+    src: url("../fonts/gobcl_bold-webfont.woff2") format("woff2"), url("../fonts/gobcl_bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "gobcl-heavy";
+    src: url("../fonts/gobcl_heavy-webfont.woff2") format("woff2"), url("../fonts/gobcl_heavy-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  //Familia Tipográfica
+
+$gobcl-regular :'gobcl-regular';
+$gobcl-bold :'gobcl-bold';
+$gobcl-light:'gobcl-light';
+$gobcl-heavy :'gobcl-heavy';
+
+
+// CSS
+button{
+ letter-spacing: -0.1pt;
+}
+input[disabled]{
+  cursor: not-allowed;
+}
+.contenedor{
+    width: 90%;
+    padding: 0 5%;
+    height: auto;
+}
+
+.separador{
+    width: 100%;
+    height: auto;
+}
+
+.al-10{
+    height: 10px;
+}
+.al-30{
+    height: 30px;
+}
+.al-50{
+    height: 50px;
+}
+.al-70{
+    height: 70px;
+}
+.al-80{
+    height: 80px;
+}
+.al-100{
+    height: 100px;
+}
+
+.simple-link{
+  color: $azul1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+#menu{
+  position:fixed;
+  height: 100%;
+  width: 18%;
+}
+
+.row{
+    display: flex;
+    height: auto;
+}
+
+.col-md-1{
+    width: 10%;
+    height: auto;
+    padding: 0 1%;
+}
+
+.col-md-2{
+    width: 22%;
+    height: auto;
+    padding: 0 1%;
+}
+
+.col-md-3{
+    width: 30%;
+    height: auto;
+    padding: 0 1%;
+}
+
+.col-md-6{
+    width: 48%;
+    height: auto;
+    padding: 1%;
+}
+
+.col-md-12{
+    width: 97%;
+    height: auto;
+    padding: 1%;
+}
+
+.menu{
+  width: 18%;
+  height: auto;
+}
+
+.contenido{
+  width: 80%;
+  height: auto;
+  margin: 2% 0 0 19%;
+}
+
+h1{
+  font-size: 38px;
+  letter-spacing: -0.1pt;
+  color: $azul1;
+  font-family: $gobcl-regular;
+  font-weight: 100;
+  margin-left: 1%;
+}
+
+h2{
+  font-size: 32px;
+  letter-spacing: -0.1pt;
+  color: $azul1;
+  font-family: $gobcl-regular;
+  margin-left: 1%;
+}
+
+.migaspan{
+  font-size: 14px;
+  color: $gris-50;
+  margin-left: 1%;
+}
+
+.mat-mdc-header-row{
+  background-color: #eaf0f7;
+  color: $azul2;
+  font-family: "gobcl-bold";
+  line-height: 15px;
+}
+
+//Cajas Contenido
+.caja-cont-1{
+  width: 95%;
+  height: auto;
+  background-color: $blanco;
+  padding:2% 1%;
+  margin-left: 1%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+}
+
+//Tamaños Iconos + color
+.ico-18{
+  font-size: 18px;
+  color: $azul1;
+}
+.ico-24{
+  font-size: 24px;
+  color: $azul1;
+}
+.ico-30{
+  font-size: 30px;
+  color: $azul1;
+}
+.ico-36{
+  font-size: 36px;
+  color: $azul1;
+}
+.ico-42{
+  font-size: 42px;
+  color: $azul1;
+}
+.ico-48{
+  font-size: 48px;
+  color: $azul1;
+}
+.ico-54{
+  font-size: 54px;
+  color: $azul1;
+}
+.ico-60{
+  font-size: 60px;
+  color: $azul1;
+}
+
+
+//PIAS-Chips
+.pias-chips{
+  width: 42px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  line-height: 25px;
+}
+.pias-chips p{
+  font-family: $gobcl-bold;
+}
+
+.pias-chips-estado{
+  width: 120px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  line-height: 15px;
+  font-size: 14px;
+  font-family: $gobcl-regular;
+  padding: 3px 0;
+}
+
+.color-verde{
+  background-color: #00A52E;
+  color: $blanco;
+  text-align: center;
+}
+
+.color-azul{
+  background-color: $azul1;
+  color: $blanco;
+  text-align: center;
+}
+
+.color-amarillo{
+  background-color: $amarillo;
+  color: $negro;
+}
+
+.color-rojo{
+  background-color: $rojo;
+  color: $blanco;
+  text-align: center;
+}
+
+.color-gris{
+  background-color: $gris-70;
+  color: $blanco;
+  text-align: center;
+}
+
+
+//CSS Botones
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+
+
+// Responsivo
+
+@media only screen and (max-width: 500px) {
+    .row{
+        display: block;
+        height: auto;
+    }
+}
